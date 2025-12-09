@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../common_styles.css">
+  
+  <style>
+    h1, h2, h3 {
+      color: #465c75;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      color: #06192c;
+      font-size: 1.2em;
+      
+      margin: 0 0 15px 0;
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    main {
+      margin: 1%;
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 40px;
+    }
+
+    .bird-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 3px solid #465c75;
+    }
+
+    .bird-image-container {
+      background: #fdfdfd;
+      border-radius: 10px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10em;
+    }
+
+    .bird-title-info h1 {
+      font-size: 3.5em;
+      color: #465c75;
+      margin-bottom: 10px;
+    }
+
+    .bird-title-info .latin-name {
+      font-size: 1.8em;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .classification {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #465c75;
+    }
+
+    .classification h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+
+    .classification-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .classification-item strong {
+      color: #465c75;
+    }
+
+    .characteristics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .char-card {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .char-card .icon {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .char-card h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .char-card p {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    .content-section {
+      margin: 40px 0;
+    }
+
+    .content-section h2 {
+      font-size: 2.5em;
+      color: #465c75;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #465c75;
+    }
+
+    .info-box {
+      background: #fdfdfd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .info-box h3 {
+      color: #856404;
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+
+    .info-box p {
+      color: #856404;
+      margin-bottom: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .gallery-item {
+      background: #fdfdfd;
+      border-radius: 8px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4em;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #465c75;
+      color: #fdfdfd;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .back-link:hover {
+      background: #465c75;
+      text-decoration: none;
+    }
+
+    /* МОБИЛЬНЫЕ СТИЛИ */
+    @media screen and (max-width: 800px) {
+      .hero-section h1 {
+        font-size: 1.7em;
+      }
+
+      .hero-section img {
+        width: 300px;
+      }
+
+      .hero-section p {
+        font-size: 1em;
+        width: 70%;
+      }
+
+      .articles-grid,
+      .birds-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section {
+        width: 70vw;
+      }
+
+      .bird-header {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header>
+<div class="left-elem">
+  <a href="../birds_main_updated.html" class="logo-link">
+    <div class="logo">
+      <img src="../imgs/logo.png" alt="Логотип сайта" />
+    </div>
+    <div class="name">
+      <h1>Птицы Москвы</h1>
+      <p>и подмосковья</p>
+    </div>
+  </a>
+</div>
+    <div class="right-elem">
+      <a href="../birds_main_updated.html">Домой</a>
+      <a href="../articles.html">Статьи</a>
+      <a href="../classification_updated.html">Справочник</a>
+    </div>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+        <li><a href="../birds_main_updated.html" class="menu-item">Домой</a></li>
+        <li><a href="../articles.html" class="menu-item">Статьи</a></li>
+        <li><a href="../classification_updated.html" class="menu-item">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
+
+<main>
+
+<div class="bird-header">
+  <div class="bird-image-container"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Common_Raven_Grand_Canyon_1.jpg/1280px-Common_Raven_Grand_Canyon_1.jpg"></div>
+
+  <div class="bird-title-info">
+    <h1>Ворон</h1>
+    <p class="latin-name">Corvus corax</p>
+
+    <div class="classification">
+      <h3>Систематика</h3>
+      <div class="classification-item"><strong>Отряд:</strong><span>Воробьинообразные</span></div>
+      <div class="classification-item"><strong>Семейство:</strong><span>Врановые</span></div>
+      <div class="classification-item"><strong>Род:</strong><span>Вороны</span></div>
+      <div class="classification-item"><strong>Охранный статус:</strong><span>Без угрозы</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="characteristics">
+  <div class="char-card"><div class="icon">📏</div><h3>Размер</h3><p>60–70 см</p></div>
+  <div class="char-card"><div class="icon">⚖️</div><h3>Вес</h3><p>800–1500 г</p></div>
+  <div class="char-card"><div class="icon">🪽</div><h3>Размах крыльев</h3><p>120–150 см</p></div>
+  <div class="char-card"><div class="icon">⏰</div><h3>Продолжительность жизни</h3><p>до 40–70 лет (в неволе)</p></div>
+</div>
+
+<section class="content-section">
+  <h2>Описание</h2>
+  <p>Крупнейший представитель воробьинообразных. Оперение полностью чёрное с характерным металлическим синеватым или фиолетовым отливом. Клюв мощный, острый. Хвост клиновидный. В полёте крылья кажутся особенно длинными, полёт маневренный, с планированием.</p>
+</section>
+
+<section class="content-section">
+  <h2>Распространение и места обитания</h2>
+  <p>Обитает почти по всему Северному полушарию. Предпочитает леса (чаще хвойные), побережья, горы, тундру. В последнее время осваивает и городские ландшафты. Ведёт в основном оседлый образ жизни.</p>
+</section>
+
+<section class="content-section">
+  <h2>Питание</h2>
+  <p>Всеяден и очень сообразителен в добыче пищи. Питается падалью, мелкими животными (грызунами, птицами, ящерицами), яйцами, насекомыми, червями. Не брезгует пищевыми отходами. Может запасать пищу.</p>
+
+  <div class="info-box">
+    <h3>💡 Интересный факт</h3>
+    <p>Ворон — один из самых умных представителей животного мира. Он способен использовать и даже изготавливать простые орудия труда, решать логические задачи, запоминать лица людей, играть и подражать различным звукам, включая человеческую речь. В культурах многих народов он считается символом мудрости.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Размножение</h2>
+  <p>Создаёт постоянные пары. Гнездо строит на высоких деревьях или скалах из веток, выстилая шерстью и мхом. Использует гнездо несколько лет подряд. В кладке 4–6 голубовато-зелёных с пятнами яиц. Насиживает самка около 3 недель.</p>
+</section>
+
+<section class="content-section">
+  <h2>Поведение и голос</h2>
+  <p>Осторожная и наблюдательная птица. Обладает богатым словарным запасом: может издавать глубокое гортанное «крук» или «корр», стуки, щелчки, подражательные звуки. Ночуют зимой иногда группами.</p>
+</section>
+
+<section class="content-section">
+  <h2>Фотогалерея</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Corvus_corax_ad_berlin_090516.jpg" alt="Ворон в полёте"></div>
+    <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Corvus_corax_canariensis%2C_Fuerteventura.jpg/2560px-Corvus_corax_canariensis%2C_Fuerteventura.jpg" alt="Ворон на скале"></div>
+    <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/3782_Common_Raven_in_flight.jpg" alt="Крупный план головы ворона"></div>
+    <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Corvus_corax_jouveniles.jpeg" alt="Ворон с добычей"></div>
+  </div>
+</section>
+
+<a href="../classification_updated.html" class="back-link">← Вернуться к списку птиц</a>
+
+</main>
+  <footer>
+    <h2>📞 Контактная информация</h2>
+    <p>&copy; 2025 Птицы Москвы и Подмосковья</p>
+    <address>
+      Разработчик: Дзюба Полина<br>
+      Email: <a href="mailto:burnermail@gmail.com">burnermail@gmail.com</a><br>
+      Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+    </address>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../common_styles.css">
+  
+  <style>
+    h1, h2, h3 {
+      color: #465c75;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      color: #06192c;
+      font-size: 1.2em;
+      
+      margin: 0 0 15px 0;
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    main {
+      margin: 1%;
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 40px;
+    }
+
+    .bird-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 3px solid #465c75;
+    }
+
+    .bird-image-container {
+      background: #fdfdfd;
+      border-radius: 10px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10em;
+    }
+
+    .bird-title-info h1 {
+      font-size: 3.5em;
+      color: #465c75;
+      margin-bottom: 10px;
+    }
+
+    .bird-title-info .latin-name {
+      font-size: 1.8em;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .classification {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #465c75;
+    }
+
+    .classification h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+
+    .classification-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .classification-item strong {
+      color: #465c75;
+    }
+
+    .characteristics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .char-card {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .char-card .icon {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .char-card h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .char-card p {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    .content-section {
+      margin: 40px 0;
+    }
+
+    .content-section h2 {
+      font-size: 2.5em;
+      color: #465c75;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #465c75;
+    }
+
+    .info-box {
+      background: #fdfdfd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .info-box h3 {
+      color: #856404;
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+
+    .info-box p {
+      color: #856404;
+      margin-bottom: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .gallery-item {
+      background: #fdfdfd;
+      border-radius: 8px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4em;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #465c75;
+      color: #fdfdfd;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .back-link:hover {
+      background: #465c75;
+      text-decoration: none;
+    }
+
+    /* МОБИЛЬНЫЕ СТИЛИ */
+    @media screen and (max-width: 800px) {
+      .hero-section h1 {
+        font-size: 1.7em;
+      }
+
+      .hero-section img {
+        width: 300px;
+      }
+
+      .hero-section p {
+        font-size: 1em;
+        width: 70%;
+      }
+
+      .articles-grid,
+      .birds-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section {
+        width: 70vw;
+      }
+
+      .bird-header {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header>
+    <div class="left-elem">
+  <a href="birds_main_updated.html" class="logo-link">
+    <div class="logo">
+      <img src="../imgs/logo.png" alt="Логотип сайта" />
+    </div>
+    <div class="name">
+      <h1>Птицы Москвы</h1>
+      <p>и подмосковья</p>
+    </div>
+  </a>
+</div>
+    <div class="right-elem">
+      <a href="birds_main_updated.html">Домой</a>
+      <a href="articles.html">Статьи</a>
+      <a href="classification_updated.html">Справочник</a>
+    </div>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+        <li><a href="birds_main_updated.html" class="menu-item">Домой</a></li>
+        <li><a href="articles.html" class="menu-item">Статьи</a></li>
+        <li><a href="classification_updated.html" class="menu-item">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main>
+    <!-- ЗАГОЛОВОК С ИЗОБРАЖЕНИЕМ -->
+    <div class="bird-header">
+      <div class="bird-image-container">
+        🦜
+      </div>
+      
+      <div class="bird-title-info">
+        <h1>Воробей домовый</h1>
+        <p class="latin-name">Passer domesticus</p>
+        
+        <div class="classification">
+          <h3>📋 Систематика</h3>
+          <div class="classification-item">
+            <strong>Отряд:</strong>
+            <span>Воробьинообразные</span>
+          </div>
+          <div class="classification-item">
+            <strong>Семейство:</strong>
+            <span>Воробьиные</span>
+          </div>
+          <div class="classification-item">
+            <strong>Род:</strong>
+            <span>Настоящие воробьи</span>
+          </div>
+          <div class="classification-item">
+            <strong>Охранный статус:</strong>
+            <span>Вызывающий наименьшие опасения</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ХАРАКТЕРИСТИКИ -->
+    <div class="characteristics">
+      <div class="char-card">
+        <div class="icon">📏</div>
+        <h3>Размер</h3>
+        <p>14-16 см</p>
+      </div>
+      <div class="char-card">
+        <div class="icon">⚖️</div>
+        <h3>Вес</h3>
+        <p>24-39 г</p>
+      </div>
+      <div class="char-card">
+        <div class="icon">🪽</div>
+        <h3>Размах крыльев</h3>
+        <p>21-25 см</p>
+      </div>
+      <div class="char-card">
+        <div class="icon">⏰</div>
+        <h3>Продолжительность жизни</h3>
+        <p>3-5 лет</p>
+      </div>
+    </div>
+
+    <!-- ОПИСАНИЕ -->
+    <section class="content-section">
+      <h2>📝 Описание</h2>
+      <p>Воробей домовый — одна из самых известных и распространённых птиц, живущих рядом с человеком. Это небольшая птица плотного телосложения с коротким хвостом и крепким клювом конической формы.</p>
+      
+      <p><strong>Окраска самца:</strong> Верх головы, область вокруг глаз и затылок серые. Щёки белые с чёрным пятном на ухе. Горло и верхняя часть груди чёрные. Спина коричневая с чёрными продольными пестринами. Брюшко светло-серое. На крыле хорошо заметна белая поперечная полоса.</p>
+      
+      <p><strong>Окраска самки:</strong> Самки окрашены скромнее — серовато-бурые сверху и грязно-белые снизу, без чёрного нагрудника и серой шапочки. Над глазом проходит светлая бровь.</p>
+    </section>
+
+    <!-- РАСПРОСТРАНЕНИЕ -->
+    <section class="content-section">
+      <h2>🗺️ Распространение и места обитания</h2>
+      <p>Воробей домовый — синантропный вид, то есть его жизнь тесно связана с человеком. В Москве и Подмосковье встречается повсеместно — в городах, посёлках, деревнях, на фермах. Избегает глухих лесов и открытых безлюдных пространств.</p>
+      
+      <p>Гнездится в укрытиях: под крышами домов, в нишах зданий, в дуплах деревьев, в скворечниках, за наличниками окон, в фонарях, вывесках. Часто селится колониями.</p>
+    </section>
+
+    <!-- ПИТАНИЕ -->
+    <section class="content-section">
+      <h2>🍽️ Питание</h2>
+      <p>Воробей — всеядная птица с преобладанием растительной пищи в рационе:</p>
+      
+      <p><strong>Основной рацион:</strong> Семена культурных и диких растений, зёрна злаков, хлебные крошки, ягоды, почки деревьев.</p>
+      
+      <p><strong>Животная пища:</strong> Летом активно ловит насекомых — жуков, гусениц, бабочек, мух. Птенцов выкармливает преимущественно насекомыми.</p>
+      
+      <div class="info-box">
+        <h3>💡 Интересный факт</h3>
+        <p>Воробьи могут совершать набеги на сельскохозяйственные поля и наносить ущерб урожаю, но в то же время они уничтожают огромное количество вредных насекомых, принося пользу сельскому хозяйству.</p>
+      </div>
+    </section>
+ 
+    <!-- РАЗМНОЖЕНИЕ -->
+    <section class="content-section">
+      <h2>🥚 Размножение</h2>
+      <p><strong>Гнездование:</strong> Воробьи — оседлые птицы, пары формируются на всю жизнь. Гнездо строят оба партнёра из соломы, сухой травы, перьев, ваты, бумаги. Гнездо имеет неряшливый вид, но внутри выстилается мягкими материалами.</p>
+      
+      <p><strong>Кладка:</strong> В году бывает 2-3 кладки по 4-8 яиц. Яйца белые с серыми или коричневыми крапинками. Насиживает в основном самка в течение 11-13 дней.</p>
+      
+      <p><strong>Птенцы:</strong> Вылупляются слепыми и голыми. Оба родителя выкармливают их насекомыми. Птенцы покидают гнездо через 14-16 дней, но ещё некоторое время родители продолжают их подкармливать.</p>
+    </section>
+
+    <!-- ПОВЕДЕНИЕ -->
+    <section class="content-section">
+      <h2>🎭 Поведение и голос</h2>
+      <p>Воробьи — активные, шумные и общительные птицы. Держатся стайками, особенно вне сезона размножения. Очень осторожны и пугливы, но при этом живут в непосредственной близости от человека.</p>
+      
+      <p><strong>Голос:</strong> Характерное чириканье — «чив-чив», «джив-джив». Звуки однообразные, но могут быть довольно громкими, особенно когда птицы собираются стаями.</p>
+      
+      <p><strong>Особенности:</strong> Воробьи любят купаться в пыли и песке — так они чистят перья от паразитов. Также охотно купаются в лужах и на мелководье.</p>
+    </section>
+
+    <!-- ГАЛЕРЕЯ -->
+    <section class="content-section">
+      <h2>📸 Фотогалерея</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">🦜</div>
+        <div class="gallery-item">🐣</div>
+        <div class="gallery-item">🪺</div>
+        <div class="gallery-item">🦜</div>
+      </div>
+    </section>
+
+    <a href="birds_main_updated.html" class="back-link">← Вернуться к списку птиц</a>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <h2>📞 Контактная информация</h2>
+    <p>&copy; Птицы Москвы и Подмосковья  2025</p>
+    <address>
+      Разработчик: Дзюба Полина<br>
+      Email: <a href="mailto:burnermail@gmail.com">burnermail@gmail.com</a><br>
+      Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+    </address>
+  </footer>
+</body>
+</html>

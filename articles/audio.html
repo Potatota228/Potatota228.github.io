@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Как помочь птенцу? - Птицы Москвы</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
+  <link rel="stylesheet" href="../common_styles.css">
+  
+  <style>
+    h1, h2, h3 {
+      text-decoration: none;
+      color: #465c75;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      color: #06192c;
+      font-size: 1.2em;
+      
+      margin: 0 0 15px 0;
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    main {
+      margin: 1%;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
+    }
+
+    /* БОКОВАЯ НАВИГАЦИЯ */
+    nav {
+      background: #465c75;
+      padding: 20px;
+      border-radius: 10px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+
+    nav strong {
+      color: #fdfdfd;
+      font-size: 1.5em;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    nav a {
+      display: block;
+      color: #fdfdfd;
+      padding: 10px 0;
+      font-size: 1.2em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    nav a:hover {
+      color: #fdfdfd;
+      padding-left: 10px;
+      text-decoration: none;
+    }
+
+    /* КОНТЕНТ СТАТЬИ */
+    article {
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 40px;
+    }
+
+    article h1 {
+      font-size: 3em;
+      color: #465c75;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #465c75;
+      padding-bottom: 15px;
+    }
+
+    article h2 {
+      font-size: 2em;
+      color: #465c75;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    article h3 {
+      font-size: 1.5em;
+      color: #465c75;
+      margin-top: 20px;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 1em;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .warning-box {
+      background: #fdfdfd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .warning-box h3 {
+      color: #856404;
+      margin-top: 0;
+    }
+
+    .warning-box p {
+      color: #856404;
+      margin-bottom: 0;
+    }
+
+    .info-box {
+      background: #fdfdfd;
+      border-left: 4px solid #0c5460;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .info-box h3 {
+      color: #0c5460;
+      margin-top: 0;
+    }
+
+    .info-box p {
+      color: #0c5460;
+      margin-bottom: 0;
+    }
+
+    .steps-list {
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps-list li {
+      counter-increment: step-counter;
+      margin-bottom: 30px;
+      padding-left: 60px;
+      position: relative;
+    }
+
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #465c75;
+      color: #fdfdfd;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    /* МОБИЛЬНЫЕ СТИЛИ */
+    @media screen and (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+      }
+
+      article {
+        padding: 20px;
+      }
+
+      article h1 {
+        font-size: 2em;
+      }
+
+      .steps-list li {
+        padding-left: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header>
+<div class="left-elem">
+  <a href="../birds_main_updated.html" class="logo-link">
+    <div class="logo">
+      <img src="../imgs/logo.png" alt="Логотип сайта" />
+    </div>
+    <div class="name">
+      <h1>Птицы Москвы</h1>
+      <p>и подмосковья</p>
+    </div>
+  </a>
+</div>
+    <div class="right-elem">
+      <a href="../birds_main_updated.html">Домой</a>
+      <a href="../articles.html">Статьи</a>
+      <a href="../classification_updated.html">Справочник</a>
+    </div>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+        <li><a href="../birds_main_updated.html" class="menu-item">Домой</a></li>
+        <li><a href="../articles.html" class="menu-item">Статьи</a></li>
+        <li><a href="../classification_updated.html" class="menu-item">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
+
+ <main>
+    <nav>
+      <strong>📑 Содержание</strong>
+      <a href="#intro">Зачем учиться определять по голосу</a>
+      <a href="#how">Как научиться</a>
+      <a href="#spring">Весенние голоса</a>
+      <a href="#summer">Летние голоса</a>
+      <a href="#apps">Полезные приложения и ресурсы</a>
+    </nav>
+
+    <article>
+      <h1>Определение птиц по голосу</h1>
+      
+      <div class="article-meta">
+        Опубликовано: 12 мая 2025 | Автор: Орнитолог А.В. Петрова
+      </div>
+
+      <section id="intro">
+        <h2>Почему стоит учить голоса</h2>
+        <p>В московском регионе обитает более 250 видов птиц, но в густой листве вы увидите лишь 10–20 %. По голосу же можно определить до 80–90 % всех поющих вокруг видов.</p>
+      </section>
+
+      <section id="how">
+        <h2>Как быстро научиться</h2>
+        <ol>
+          <li>Начните с 10–15 самых громких и распространённых видов</li>
+          <li>Слушайте каждый день по 10–15 минут (утром — лучше всего)</li>
+          <li>Используйте мнемонические фразы («зин-зин», «пить-чай-давай», «пил-чай-пил»)</li>
+          <li>Ведите дневник: записывайте, что слышите в парке</li>
+          <li>Через 2–3 недели добавляйте новые виды</li>
+        </ol>
+      </section>
+
+      <section id="spring">
+        <h2>30 самых частых голосов Москвы и Подмосковья (весна–лето)</h2>
+        <div class="info-box">
+          <h3>🌷 Весенние «крикуны» (апрель–май)</h3>
+          <ul>
+            <li>Зяблик — «пинь-пинь-пинь-ррри» (весёлая трель с росчерком в конце)</li>
+            <li>Пеночка-теньковка — «тень-тень-тень-тень» (монотонно спускается)</li>
+            <li>Пеночка-весничка — грустная нисходящая трель «си-си-си-сиууу»</li>
+            <li>Славка-черноголовка — быстрая болтливая песня, как будто жалуется</li>
+            <li>Иволга — «фиу-лиу-ди» или «дудки-пиво?»</li>
+            <li>Соловей — громкие раскатистые трели и свисты ночью</li>
+            <li>Дрозд-рябинник — хриплое «чак-чак-чак», тревожный крик</li>
+            <li>Большая синица — «ци-ци-фии», «пинь-пинь-жу»</li>
+            <li>Мухоловка-пеструшка — высокое «ци-ци-бии»</li>
+            <li>Лесной конёк — «пили-пили-пили» на снижении</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="summer">
+        <h2>Летние и городские голоса</h2>
+        <ul>
+          <li>Горихвостка-лысушка — грустное «фиить… тю-тю-тю»</li>
+          <li>Серая мухоловка — скрипучее «трррр-цит»</li>
+          <li>Камышовка-барсучок — ритмичное «чер-чёр-чир-чир»</li>
+          <li>Обыкновенная кукушка — «ку-ку» (самцы), самки — «буль-буль-буль»</li>
+          <li>Ворон — низкое карканье, ворона серая — высокое «крра!»</li>
+          <li>Стриж чёрный — визгливые крики стаи над домами</li>
+          <li>Деревенская ласточка — щебет «вит-вит»</li>
+          <li>Белая трясогузка — «цли-цли»</li>
+          <li>Зелёная пересмешка — копирует всех подряд</li>
+          <li>Обыкновенный соловей — ночные концерты с мая по июнь</li>
+        </ul>
+      </section>
+
+      <section id="apps">
+        <h2>Приложения и ресурсы 2025</h2>
+        <ul>
+          <li><strong>Merlin Bird ID</strong> (Cornell Lab) — определяет по голосу в реальном времени</li>
+          <li><strong>BirdNET</strong> — бесплатное приложение с точностью до 95 %</li>
+          <li><strong>Птицы России</strong> (русскоязычное, с аудио)</li>
+          <li>Канал «Голоса птиц Подмосковья» в Telegram — ежедневные записи</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <h2>📞 Контактная информация</h2>
+    <p>&copy; Птицы Москвы и Подмосковья  2025</p>
+    <address>
+      Разработчик: Дзюба Полина<br>
+      Email: <a href="mailto:burnermail@gmail.com">burnermail@gmail.com</a><br>
+      Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+    </address>
+  </footer>
+</body>
+</html>

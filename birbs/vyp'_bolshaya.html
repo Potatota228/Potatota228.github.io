@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../common_styles.css">
+  
+  <style>
+    h1, h2, h3 {
+      color: #465c75;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      color: #06192c;
+      font-size: 1.2em;
+      
+      margin: 0 0 15px 0;
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    main {
+      margin: 1%;
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 40px;
+    }
+
+    .bird-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 3px solid #465c75;
+    }
+
+    .bird-image-container {
+      background: #fdfdfd;
+      border-radius: 10px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10em;
+    }
+
+    .bird-title-info h1 {
+      font-size: 3.5em;
+      color: #465c75;
+      margin-bottom: 10px;
+    }
+
+    .bird-title-info .latin-name {
+      font-size: 1.8em;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .classification {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #465c75;
+    }
+
+    .classification h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+
+    .classification-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .classification-item strong {
+      color: #465c75;
+    }
+
+    .characteristics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .char-card {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .char-card .icon {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .char-card h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .char-card p {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    .content-section {
+      margin: 40px 0;
+    }
+
+    .content-section h2 {
+      font-size: 2.5em;
+      color: #465c75;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #465c75;
+    }
+
+    .info-box {
+      background: #fdfdfd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .info-box h3 {
+      color: #856404;
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+
+    .info-box p {
+      color: #856404;
+      margin-bottom: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .gallery-item {
+      background: #fdfdfd;
+      border-radius: 8px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4em;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #465c75;
+      color: #fdfdfd;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .back-link:hover {
+      background: #465c75;
+      text-decoration: none;
+    }
+
+    /* МОБИЛЬНЫЕ СТИЛИ */
+    @media screen and (max-width: 800px) {
+      .hero-section h1 {
+        font-size: 1.7em;
+      }
+
+      .hero-section img {
+        width: 300px;
+      }
+
+      .hero-section p {
+        font-size: 1em;
+        width: 70%;
+      }
+
+      .articles-grid,
+      .birds-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section {
+        width: 70vw;
+      }
+
+      .bird-header {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header>
+<div class="left-elem">
+  <a href="../birds_main_updated.html" class="logo-link">
+    <div class="logo">
+      <img src="../imgs/logo.png" alt="Логотип сайта" />
+    </div>
+    <div class="name">
+      <h1>Птицы Москвы</h1>
+      <p>и подмосковья</p>
+    </div>
+  </a>
+</div>
+    <div class="right-elem">
+      <a href="../birds_main_updated.html">Домой</a>
+      <a href="../articles.html">Статьи</a>
+      <a href="../classification_updated.html">Справочник</a>
+    </div>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+        <li><a href="../birds_main_updated.html" class="menu-item">Домой</a></li>
+        <li><a href="../articles.html" class="menu-item">Статьи</a></li>
+        <li><a href="../classification_updated.html" class="menu-item">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
+
+<main>
+
+<div class="bird-header">
+  <div class="bird-image-container"><img src="https://img-fotki.yandex.ru/get/15550/269308965.f/0_1b2eff_e53b8bc6_L.png"></div>
+
+  <div class="bird-title-info">
+    <h1>Выпь большая</h1>
+    <p class="latin-name">Botaurus stellaris</p>
+
+    <div class="classification">
+      <h3>Систематика</h3>
+      <div class="classification-item"><strong>Отряд:</strong><span>Пеликанообразные</span></div>
+      <div class="classification-item"><strong>Семейство:</strong><span>Цаплевые</span></div>
+      <div class="classification-item"><strong>Род:</strong><span>Выпи</span></div>
+      <div class="classification-item"><strong>Охранный статус:</strong><span>Редкий вид (в ряде регионов)</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="characteristics">
+  <div class="char-card"><div class="icon">📏</div><h3>Размер</h3><p>70–80 см</p></div>
+  <div class="char-card"><div class="icon">⚖️</div><h3>Вес</h3><p>900–1900 г</p></div>
+  <div class="char-card"><div class="icon">🪽</div><h3>Размах крыльев</h3><p>125–135 см</p></div>
+  <div class="char-card"><div class="icon">⏰</div><h3>Продолжительность жизни</h3><p>до 10 лет</p></div>
+</div>
+
+<section class="content-section">
+  <h2>Описание</h2>
+  <p>Самый крупный представитель рода выпей. Оперение имеет идеальную камуфляжную окраску: жёлто-коричневое с тёмными пестринами и полосами, что делает птицу невидимой среди камышей. Шея толстая, клюв длинный и прямой. В случае опасности вытягивается вертикально, становясь похожей на пучок сухих стеблей.</p>
+</section>
+
+<section class="content-section">
+  <h2>Распространение и места обитания</h2>
+  <p>Обитает в обширных камышовых и тростниковых зарослях по берегам озёр, рек, стариц и болот. Предпочитает места со стоячей водой и густой надводной растительностью. Любит мягкий климат. Ведёт одиночный, скрытный образ жизни.</p>
+</section>
+
+<section class="content-section">
+  <h2>Питание</h2>
+  <p>Питается в основном рыбой (карась, окунь, щука), лягушками, водными насекомыми, мелкими грызунами (водяными полёвками). Иногда поедает птенцов водоплавающих птиц. Охотится из засады, молниеносно хватая добычу клювом.</p>
+
+  <div class="info-box">
+    <h3>💡 Интересный факт</h3>
+    <p>Весенний «буханье» или «трубный гул» большой выпи — один из самых загадочных звуков природы. Самец, призывая самку, издаёт низкие, гулкие звуки «трумб-у-трумб», разносящиеся на 2–3 км по ночному болоту. Для этого он набирает воздух в пищевод, который действует как резонатор.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Размножение</h2>
+  <p>Гнездится одиночно. Гнездо строит на заломах тростника или кочке — платформу из стеблей над водой. В кладке 4–6 зеленовато-оливковых яиц. Насиживает самка около 25–26 дней. Птенцы покидают гнездо через 2–3 недели.</p>
+</section>
+
+<section class="content-section">
+  <h2>Поведение и голос</h2>
+  <p>Мастер маскировки. Днём неподвижно стоит в зарослях. Активна в сумерках и ночью. Громко кричит «трумб-у-трумб» в основном весной по ночам и утром. В полёте шея втянута, ноги отставлены назад.</p>
+</section>
+
+<section class="content-section">
+  <h2>Фотогалерея</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Rohrdommel_flug2_400.jpg" alt="Выпь в камышах в позе затаивания"></div>
+    <div class="gallery-item"><img src="https://www.darwinmuseum.ru/subprojects/exposition/img/animal/a100986_.jpg" alt="Выпь в полёте"></div>
+    <div class="gallery-item"><img src="https://ubirds.by/wp-content/uploads/2020/05/Botaurus-720x432.jpg" alt="Крупный план головы выпи"></div>
+    <div class="gallery-item"><img src="https://birdsmoscow.net.ru/img/%D0%A4%D0%BE%D1%82%D0%BE%D1%80%D0%B5%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D0%B6%D0%B8/1%20%D0%92%D1%8B%D0%BF%D1%8C_%D0%97%D0%B0%D1%80%D1%83%D0%B1%D0%BE/10_5_Zarubo.jpg" alt="Выпь у гнезда"></div>
+  </div>
+</section>
+
+<a href="../classification_updated.html" class="back-link">← Вернуться к списку птиц</a>
+
+</main>
+  <footer>
+    <h2>📞 Контактная информация</h2>
+    <p>&copy; 2025 Птицы Москвы и Подмосковья</p>
+    <address>
+      Разработчик: Дзюба Полина<br>
+      Email: <a href="mailto:burnermail@gmail.com">burnermail@gmail.com</a><br>
+      Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+    </address>
+  </footer>
+</body>
+</html>

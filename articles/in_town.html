@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Как помочь птенцу? - Птицы Москвы</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
+  <link rel="stylesheet" href="../common_styles.css">
+  
+  <style>
+    h1, h2, h3 {
+      text-decoration: none;
+      color: #465c75;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      color: #06192c;
+      font-size: 1.2em;
+      
+      margin: 0 0 15px 0;
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    main {
+      margin: 1%;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
+    }
+
+    /* БОКОВАЯ НАВИГАЦИЯ */
+    nav {
+      background: #465c75;
+      padding: 20px;
+      border-radius: 10px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+
+    nav strong {
+      color: #fdfdfd;
+      font-size: 1.5em;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    nav a {
+      display: block;
+      color: #fdfdfd;
+      padding: 10px 0;
+      font-size: 1.2em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    nav a:hover {
+      color: #fdfdfd;
+      padding-left: 10px;
+      text-decoration: none;
+    }
+
+    /* КОНТЕНТ СТАТЬИ */
+    article {
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 40px;
+    }
+
+    article h1 {
+      font-size: 3em;
+      color: #465c75;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #465c75;
+      padding-bottom: 15px;
+    }
+
+    article h2 {
+      font-size: 2em;
+      color: #465c75;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    article h3 {
+      font-size: 1.5em;
+      color: #465c75;
+      margin-top: 20px;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 1em;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .warning-box {
+      background: #fdfdfd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .warning-box h3 {
+      color: #856404;
+      margin-top: 0;
+    }
+
+    .warning-box p {
+      color: #856404;
+      margin-bottom: 0;
+    }
+
+    .info-box {
+      background: #fdfdfd;
+      border-left: 4px solid #0c5460;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .info-box h3 {
+      color: #0c5460;
+      margin-top: 0;
+    }
+
+    .info-box p {
+      color: #0c5460;
+      margin-bottom: 0;
+    }
+
+    .steps-list {
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps-list li {
+      counter-increment: step-counter;
+      margin-bottom: 30px;
+      padding-left: 60px;
+      position: relative;
+    }
+
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #465c75;
+      color: #fdfdfd;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    /* МОБИЛЬНЫЕ СТИЛИ */
+    @media screen and (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+      }
+
+      article {
+        padding: 20px;
+      }
+
+      article h1 {
+        font-size: 2em;
+      }
+
+      .steps-list li {
+        padding-left: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header>
+<div class="left-elem">
+  <a href="../birds_main_updated.html" class="logo-link">
+    <div class="logo">
+      <img src="../imgs/logo.png" alt="Логотип сайта" />
+    </div>
+    <div class="name">
+      <h1>Птицы Москвы</h1>
+      <p>и подмосковья</p>
+    </div>
+  </a>
+</div>
+    <div class="right-elem">
+      <a href="../birds_main_updated.html">Домой</a>
+      <a href="../articles.html">Статьи</a>
+      <a href="../classification_updated.html">Справочник</a>
+    </div>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+        <li><a href="../birds_main_updated.html" class="menu-item">Домой</a></li>
+        <li><a href="../articles.html" class="menu-item">Статьи</a></li>
+        <li><a href="../classification_updated.html" class="menu-item">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
+
+ <main>
+    <nav>
+      <strong>📑 Содержание</strong>
+      <a href="#intro">Введение</a>
+      <a href="#adaptation">Как птицы приспособились к городу</a>
+      <a href="#species">Городские «чемпионы»</a>
+      <a href="#problems">Проблемы и решения</a>
+      <a href="#help">Как сделать город дружелюбнее к птицам</a>
+    </nav>
+
+    <article>
+      <h1>Птицы в городской среде</h1>
+      
+      <div class="article-meta">
+        Опубликовано: 25 августа 2025 | Автор: Орнитолог А.В. Петрова
+      </div>
+
+      <section id="intro">
+        <h2>Москва — один из самых «птичьих» мегаполисов Европы</h2>
+        <p>В черте города гнездится около 180 видов птиц — больше, чем в Лондоне или Берлине.</p>
+      </section>
+
+      <section id="adaptation">
+        <h2>Адаптации городских птиц</h2>
+        <ul>
+          <li>Поют громче и выше (чтобы перекрыть шум)</li>
+          <li>Гнездятся позже — используют тепло от зданий</li>
+          <li>Перешли на ночное пение (соловьи в центре Москвы)</li>
+          <li>Используют искусственные гнёздовья и ниши в зданиях</li>
+        </ul>
+      </section>
+
+      <section id="species">
+        <h2>Типичные городские виды 2025</h2>
+        <ul>
+          <li>Городская ласточка — полностью перешла на бетонные здания</li>
+          <li>Чёрный стриж — гнездится под крышами высоток</li>
+          <li>Сизый голубь, домовой воробей, большая синица</li>
+          <li>Утка-кряква — гнездится на балконах</li>
+          <li>Сапсан — гнездится на высотках (МГУ, Москва-Сити)</li>
+          <li>Озёрная чайка — заменила речную</li>
+        </ul>
+      </section>
+
+      <section id="problems">
+        <h2>Главные угрозы в городе</h2>
+        <ul>
+          <li>Стеклянные фасады (сотни тысяч смертей в год)</li>
+          <li>Кошки (в Москве убивают до 10 млн птиц ежегодно)</li>
+          <li>Мусор и пластик</li>
+          <li>Отсутствие зелёных коридоров</li>
+        </ul>
+      </section>
+
+      <section id="help">
+        <h2>Как сделать город лучше для птиц</h2>
+        <ul>
+          <li>Вешайте гнездовья на балконах и во дворах</li>
+          <li>Держите кошек дома или надевайте колокольчики</li>
+          <li>Делайте окна видимыми (наклейки, шторы)</li>
+          <li>Сохраняйте старые деревья и сажайте местные виды</li>
+          <li>Участвуйте в программах «Городские птицы» и «Птицы и окна»</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <h2>📞 Контактная информация</h2>
+    <p>&copy; Птицы Москвы и Подмосковья  2025</p>
+    <address>
+      Разработчик: Дзюба Полина<br>
+      Email: <a href="mailto:burnermail@gmail.com">burnermail@gmail.com</a><br>
+      Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+    </address>
+  </footer>
+</body>
+</html>

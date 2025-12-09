@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Статьи о птицах - Птицы Москвы</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="common_styles.css">
+  
+  <style>
+    /* ОСНОВНОЙ КОНТЕНТ */
+    main {
+      margin: 1%;
+      padding: 20px;
+    }
+
+    .page-title {
+      background: #465c75;
+      border-radius: 10px;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .page-title h1 {
+      color: #fdfdfd;
+      font-size: 3.5em;
+      margin-bottom: 15px;
+    }
+
+    .page-title p {
+      color: #fdfdfd;
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    /* КАТЕГОРИИ СТАТЕЙ */
+    .articles-container {
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .category-title {
+      margin-top: 5%;
+      font-size: 2.5em;
+      color: #465c75;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #465c75;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .category-icon {
+      font-size: 1.2em;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .article-card {
+      background: #fdfdfd;
+      border: 2px solid #465c75;
+      border-radius: 10px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border-color: #33485f;
+    }
+
+    .article-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .article-icon {
+      font-size: 2.5em;
+      flex-shrink: 0;
+    }
+
+    .article-card h3 {
+      font-size: 1.8em;
+      color: #465c75;
+      margin: 0 0 10px 0;
+      line-height: 1.3;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 0.95em;
+      color: #666;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .article-card p {
+      color: #06192c;
+      font-size: 1.15em;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .article-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .tag {
+      padding: 5px 12px;
+      background: #465c75;
+      color: #fdfdfd;
+      border-radius: 15px;
+      font-size: 0.9em;
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: #465c75;
+      color: #fdfdfd;
+      border-radius: 5px;
+      text-decoration: none;
+      align-self: flex-start;
+      font-size: 1.1em;
+      transition: background 0.3s ease;
+    }
+
+    .read-more:hover {
+      background: #33485f;
+      text-decoration: none;
+    }
+
+    /* СТАТИСТИКА */
+    .stats-section {
+      background: #465c75;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .stats-section h2 {
+      color: #fdfdfd;
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: #fdfdfd;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-card .number {
+      font-size: 3em;
+      color: #465c75;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .stat-card .label {
+      font-size: 1.2em;
+      color: #465c75;
+    }
+
+    /* МОБИЛЬНЫЕ СТИЛИ */
+    @media screen and (max-width: 800px) {
+      .page-title h1 {
+        font-size: 2em;
+      }
+
+      .page-title p {
+        font-size: 1.2em;
+      }
+
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-title {
+        font-size: 2em;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header>
+    <div class="left-elem">
+  <a href="birds_main_updated.html" class="logo-link">
+    <div class="logo">
+      <img src="imgs/logo.png" alt="Логотип сайта" />
+    </div>
+    <div class="name">
+      <h1>Птицы Москвы</h1>
+      <p>и подмосковья</p>
+    </div>
+  </a>
+</div>
+    <div class="right-elem">
+      <a href="birds_main_updated.html">Домой</a>
+      <a href="articles.html">Статьи</a>
+      <a href="classification_updated.html">Справочник</a>
+    </div>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+        <li><a href="birds_main_updated.html" class="menu-item">Домой</a></li>
+        <li><a href="articles.html" class="menu-item">Статьи</a></li>
+        <li><a href="classification_updated.html" class="menu-item">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main>
+    <!-- ЗАГОЛОВОК СТРАНИЦЫ -->
+    <div class="page-title">
+      <h1>Статьи о птицах</h1>
+      <p>Полезная информация для любителей природы</p>
+    </div>
+
+
+    <!-- ПОМОЩЬ ПТИЦАМ -->
+    <div class="articles-container">
+      <h2 class="category-title">
+        <span class="category-icon"></span>
+        Помощь птицам
+      </h2>
+      <div class="articles-grid">
+        <a href="articles/how_help.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Как помочь найденному птенцу?</h3>
+              <div class="article-meta">
+                <span> 15 марта 2025</span>
+                <span>👤 А.В. Петрова</span>
+              </div>
+            </div>
+          </div>
+          <p>Подробное руководство по оказанию первой помощи найденным птенцам. Узнайте, как отличить слётка от птенца, что делать в экстренной ситуации и куда обращаться за помощью.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+
+        <a href="articles/reahab.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Реабилитация раненых птиц</h3>
+              <div class="article-meta">
+                <span> 20 марта 2025</span>
+                <span>👤 М.И. Соколов</span>
+              </div>
+            </div>
+          </div>
+          <p>Что делать, если вы нашли раненую птицу? Пошаговая инструкция по транспортировке, первичному осмотру и обращению к специалистам. Список реабилитационных центров.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+
+        <a href="articles/window.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Птица залетела в окно</h3>
+              <div class="article-meta">
+                <span> 25 марта 2025</span>
+                <span>👤 Е.Н. Воробьёва</span>
+              </div>
+            </div>
+          </div>
+          <p>Как правильно поступить, если птица залетела в ваше окно или квартиру. Безопасные способы выпустить пернатого гостя и предотвратить повторные визиты.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+      </div>
+
+      <!-- НАБЛЮДЕНИЕ И ИЗУЧЕНИЕ -->
+      <h2 class="category-title">
+        <span class="category-icon"></span>
+        Наблюдение и изучение
+      </h2>
+      <div class="articles-grid">
+        <a href="articles/photo.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Как фотографировать птиц</h3>
+              <div class="article-meta">
+                <span> 5 апреля 2025</span>
+                <span>👤 Д.С. Снегирёв</span>
+              </div>
+            </div>
+          </div>
+          <p>Руководство для начинающих бёрдвотчеров. Выбор оборудования, настройки камеры, лучшее время для съёмки и секреты получения отличных снимков пернатых.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+
+        <a href="articles/audio.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Определение птиц по голосу</h3>
+              <div class="article-meta">
+                <span> 10 апреля 2025</span>
+                <span>👤 А.В. Соловьёв</span>
+              </div>
+            </div>
+          </div>
+          <p>Учимся распознавать птиц по пению и крикам. Аудиозаписи голосов 30 самых распространённых видов московского региона с подробными описаниями.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+
+        <a href="articles/migration.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Сезонная миграция птиц</h3>
+              <div class="article-meta">
+                <span> 15 апреля 2025</span>
+                <span>👤 К.П. Журавлёв</span>
+              </div>
+            </div>
+          </div>
+          <p>Когда и куда улетают птицы нашего региона? Карты миграционных путей, календарь прилёта и отлёта различных видов, интересные факты о дальних перелётах.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+      </div>
+
+      <!-- КОРМЛЕНИЕ И УХОД -->
+      <h2 class="category-title">
+        <span class="category-icon"></span>
+        Кормление и уход
+      </h2>
+      <div class="articles-grid">
+        <a href="articles/feeding_winter.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Кормление птиц зимой</h3>
+              <div class="article-meta">
+                <span> 1 декабря 2024</span>
+                <span>👤 Н.А. Синицына</span>
+              </div>
+            </div>
+          </div>
+          <p>Что можно и нельзя давать птицам в холодное время года. Правильное устройство кормушек, выбор корма для разных видов, режим подкормки и типичные ошибки.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+
+        <a href="articles/house.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Изготовление скворечников</h3>
+              <div class="article-meta">
+                <span> 10 марта 2025</span>
+                <span>👤 В.И. Дятлов</span>
+              </div>
+            </div>
+          </div>
+          <p>Пошаговая инструкция по созданию домиков для птиц. Чертежи различных типов гнездовий, выбор материалов, правила размещения и обслуживания.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+
+        <a href="articles/water.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Поилки для птиц</h3>
+              <div class="article-meta">
+                <span> 20 мая 2025</span>
+                <span>👤 О.В. Ласточкина</span>
+              </div>
+            </div>
+          </div>
+          <p>Важность источников воды для птиц, особенно в жаркое время. Как правильно организовать поилку или купальню, поддерживать чистоту и защищать от хищников.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+      </div>
+
+      <!-- ЭКОЛОГИЯ И ОХРАНА -->
+      <h2 class="category-title">
+        <span class="category-icon"></span>
+        Экология и охрана
+      </h2>
+      <div class="articles-grid">
+        <a href="articles/red_book.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Исчезающие виды птиц Подмосковья</h3>
+              <div class="article-meta">
+                <span> 1 июня 2025</span>
+                <span>👤 Р.Н. Орлов</span>
+              </div>
+            </div>
+          </div>
+          <p>Обзор редких и находящихся под угрозой видов птиц московского региона. Причины сокращения популяций, меры по охране и как каждый может помочь сохранению биоразнообразия.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+
+        <a href="articles/in_town.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Птицы в городской среде</h3>
+              <div class="article-meta">
+                <span> 15 июня 2025</span>
+                <span>👤 Т.А. Грачёва</span>
+              </div>
+            </div>
+          </div>
+          <p>Как птицы адаптируются к жизни в городе? Влияние урбанизации на поведение и экологию птиц, примеры успешной адаптации, создание благоприятной среды в мегаполисе.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+
+        <a href="articles/ecosystem.html" class="article-card">
+          <div class="article-header">
+            <span class="article-icon"></span>
+            <div>
+              <h3>Значение птиц в экосистеме</h3>
+              <div class="article-meta">
+                <span> 25 июня 2025</span>
+                <span>👤 И.С. Скворцов</span>
+              </div>
+            </div>
+          </div>
+          <p>Роль птиц в природе: опыление растений, распространение семян, контроль численности насекомых. Почему важно сохранять разнообразие пернатых и последствия их исчезновения.</p>
+          
+          <span class="read-more">Читать статью →</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <h2>📞 Контактная информация</h2>
+    <p>&copy; Птицы Москвы и Подмосковья  2025</p>
+    <address>
+      Разработчик: Дзюба Полина<br>
+      Email: <a href="mailto:burnermail@gmail.com">burnermail@gmail.com</a><br>
+      Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+    </address>
+  </footer>
+</body>
+</html>

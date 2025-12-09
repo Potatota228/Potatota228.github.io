@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Как помочь птенцу? - Птицы Москвы</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   
+  <link rel="stylesheet" href="../common_styles.css">
+  
+  <style>
+    h1, h2, h3 {
+      text-decoration: none;
+      color: #465c75;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      color: #06192c;
+      font-size: 1.2em;
+      
+      margin: 0 0 15px 0;
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    main {
+      margin: 1%;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
+    }
+
+    /* БОКОВАЯ НАВИГАЦИЯ */
+    nav {
+      background: #465c75;
+      padding: 20px;
+      border-radius: 10px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+
+    nav strong {
+      color: #fdfdfd;
+      font-size: 1.5em;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    nav a {
+      display: block;
+      color: #fdfdfd;
+      padding: 10px 0;
+      font-size: 1.2em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    nav a:hover {
+      color: #fdfdfd;
+      padding-left: 10px;
+      text-decoration: none;
+    }
+
+    /* КОНТЕНТ СТАТЬИ */
+    article {
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 40px;
+    }
+
+    article h1 {
+      font-size: 3em;
+      color: #465c75;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #465c75;
+      padding-bottom: 15px;
+    }
+
+    article h2 {
+      font-size: 2em;
+      color: #465c75;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    article h3 {
+      font-size: 1.5em;
+      color: #465c75;
+      margin-top: 20px;
+    }
+
+    .article-meta {
+      color: #666;
+      font-size: 1em;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .warning-box {
+      background: #fdfdfd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .warning-box h3 {
+      color: #856404;
+      margin-top: 0;
+    }
+
+    .warning-box p {
+      color: #856404;
+      margin-bottom: 0;
+    }
+
+    .info-box {
+      background: #fdfdfd;
+      border-left: 4px solid #0c5460;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .info-box h3 {
+      color: #0c5460;
+      margin-top: 0;
+    }
+
+    .info-box p {
+      color: #0c5460;
+      margin-bottom: 0;
+    }
+
+    .steps-list {
+      counter-reset: step-counter;
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps-list li {
+      counter-increment: step-counter;
+      margin-bottom: 30px;
+      padding-left: 60px;
+      position: relative;
+    }
+
+    .steps-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #465c75;
+      color: #fdfdfd;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    /* МОБИЛЬНЫЕ СТИЛИ */
+    @media screen and (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+      }
+
+      article {
+        padding: 20px;
+      }
+
+      article h1 {
+        font-size: 2em;
+      }
+
+      .steps-list li {
+        padding-left: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header>
+<div class="left-elem">
+  <a href="../birds_main_updated.html" class="logo-link">
+    <div class="logo">
+      <img src="../imgs/logo.png" alt="Логотип сайта" />
+    </div>
+    <div class="name">
+      <h1>Птицы Москвы</h1>
+      <p>и подмосковья</p>
+    </div>
+  </a>
+</div>
+    <div class="right-elem">
+      <a href="../birds_main_updated.html">Домой</a>
+      <a href="../articles.html">Статьи</a>
+      <a href="../classification_updated.html">Справочник</a>
+    </div>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+        <li><a href="../birds_main_updated.html" class="menu-item">Домой</a></li>
+        <li><a href="../articles.html" class="menu-item">Статьи</a></li>
+        <li><a href="../classification_updated.html" class="menu-item">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
+
+ <main>
+    <nav>
+      <strong>📑 Содержание</strong>
+      <a href="#intro">Что делать сразу</a>
+      <a href="#release">Как безопасно выпустить</a>
+      <a href="#prevention">Как предотвратить повторные столкновения</a>
+    </nav>
+
+    <article>
+      <h1>Птица залетела в окно или квартиру</h1>
+      
+      <div class="article-meta">
+        Опубликовано: 22 апреля 2025 | Автор: Орнитолог А.В. Петрова
+      </div>
+
+      <section id="intro">
+        <h2>Птица ударилась о стекло — что делать за первые 10 секунд</h2>
+        <p>Большинство птиц после удара о окно находятся в состоянии шока или оглушения. Действуйте быстро и спокойно.</p>
+        
+        <ul class="steps-list">
+          <li>Аккуратно поднимите птицу (в перчатках или через ткань)</li>
+          <li>Положите в картонную коробку с отверстиями, на дно — мягкую ткань</li>
+          <li>Поставьте коробку в тёмное тихое место на 1–2 часа</li>
+          <li>Через 1–2 часа откройте коробку на улице в безопасном месте</li>
+        </ul>
+        
+        <div class="info-box">
+          <h3>ℹ️ 80 % оглушённых птиц приходят в себя и улетают самостоятельно</h3>
+        </div>
+      </section>
+
+      <section id="release">
+        <h2>Птица залетела в квартиру — как выпустить</h2>
+        <ol class="steps-list">
+          <li><strong>Закройте все комнаты</strong>, оставьте открытым только одно окно или балкон</li>
+          <li><strong>Зашторьте все окна кроме одного</strong> — птица полетит на свет</li>
+          <li><strong>Выключите свет в помещении</strong> и откройте настежь выход</li>
+          <li><strong>Отойдите в сторону</strong> и ждите. Не машите руками!</li>
+          <li>Если через 20–30 минут не вылетела — ловите через лёгкую ткань и выпускайте на улице</li>
+        </ol>
+        
+        <div class="warning-box">
+          <h3>⚠️ Никогда не пытайтесь ловить птицу голыми руками в комнате</h3>
+          <p>Испуганная птица может разбиться насмерть о стекло или стены.</p>
+        </div>
+      </section>
+
+      <section id="prevention">
+        <h2>Как защитить окна от столкновений</h2>
+        <p>Простые и эффективные способы:</p>
+        <ul>
+          <li>Наклейки-силуэты хищников (работают средне)</li>
+          <li>Вертикальные или горизонтальные полосы маркером с шагом не более 10 см (очень эффективно)</li>
+          <li>Шторы или жалюзи днём</li>
+          <li>Специальная плёнка с УФ-узором (птицы видят, человек — нет)</li>
+          <li>Кормушки ставьте либо ближе 1 м к окну, либо дальше 10 м</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <!-- ПОДВАЛ -->
+  <footer>
+    <h2>📞 Контактная информация</h2>
+    <p>&copy; Птицы Москвы и Подмосковья  2025</p>
+    <address>
+      Разработчик: Дзюба Полина<br>
+      Email: <a href="mailto:burnermail@gmail.com">burnermail@gmail.com</a><br>
+      Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+    </address>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../common_styles.css">
+  
+  <style>
+    h1, h2, h3 {
+      color: #465c75;
+      margin: 0 0 15px 0;
+    }
+
+    p {
+      color: #06192c;
+      font-size: 1.2em;
+      
+      margin: 0 0 15px 0;
+    }
+
+    /* ОСНОВНОЙ КОНТЕНТ */
+    main {
+      margin: 1%;
+      background: #fdfdfd;
+      border-radius: 10px;
+      padding: 40px;
+    }
+
+    .bird-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 3px solid #465c75;
+    }
+
+    .bird-image-container {
+      background: #fdfdfd;
+      border-radius: 10px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10em;
+    }
+
+    .bird-title-info h1 {
+      font-size: 3.5em;
+      color: #465c75;
+      margin-bottom: 10px;
+    }
+
+    .bird-title-info .latin-name {
+      font-size: 1.8em;
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .classification {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #465c75;
+    }
+
+    .classification h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+
+    .classification-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .classification-item strong {
+      color: #465c75;
+    }
+
+    .characteristics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .char-card {
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .char-card .icon {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .char-card h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .char-card p {
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    .content-section {
+      margin: 40px 0;
+    }
+
+    .content-section h2 {
+      font-size: 2.5em;
+      color: #465c75;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #465c75;
+    }
+
+    .info-box {
+      background: #fdfdfd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    .info-box h3 {
+      color: #856404;
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+
+    .info-box p {
+      color: #856404;
+      margin-bottom: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .gallery-item {
+      background: #fdfdfd;
+      border-radius: 8px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4em;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #465c75;
+      color: #fdfdfd;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+
+    .back-link:hover {
+      background: #465c75;
+      text-decoration: none;
+    }
+
+    /* МОБИЛЬНЫЕ СТИЛИ */
+    @media screen and (max-width: 800px) {
+      .hero-section h1 {
+        font-size: 1.7em;
+      }
+
+      .hero-section img {
+        width: 300px;
+      }
+
+      .hero-section p {
+        font-size: 1em;
+        width: 70%;
+      }
+
+      .articles-grid,
+      .birds-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section {
+        width: 70vw;
+      }
+
+      .bird-header {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ШАПКА -->
+  <header>
+<div class="left-elem">
+  <a href="../birds_main_updated.html" class="logo-link">
+    <div class="logo">
+      <img src="../imgs/logo.png" alt="Логотип сайта" />
+    </div>
+    <div class="name">
+      <h1>Птицы Москвы</h1>
+      <p>и подмосковья</p>
+    </div>
+  </a>
+</div>
+    <div class="right-elem">
+      <a href="../birds_main_updated.html">Домой</a>
+      <a href="../articles.html">Статьи</a>
+      <a href="../classification_updated.html">Справочник</a>
+    </div>
+    <div class="menu">
+      <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+      <label for="burger-checkbox" class="burger"></label>
+      <ul class="menu-list">
+        <li><a href="../birds_main_updated.html" class="menu-item">Домой</a></li>
+        <li><a href="../articles.html" class="menu-item">Статьи</a></li>
+        <li><a href="../classification_updated.html" class="menu-item">Справочник</a></li>
+      </ul>
+    </div>
+  </header>
+
+<main>
+
+<div class="bird-header">
+  <div class="bird-image-container"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/%D0%91%D0%BE%D1%80%D0%BC%D0%BE%D1%82%D1%83%D1%88%D0%BA%D0%B0_Iduna_caligata.JPG/960px-%D0%91%D0%BE%D1%80%D0%BC%D0%BE%D1%82%D1%83%D1%88%D0%BA%D0%B0_Iduna_caligata.JPG"></div>
+
+  <div class="bird-title-info">
+    <h1>Бормотушка северная</h1>
+    <p class="latin-name">Iduna caligata</p>
+
+    <div class="classification">
+      <h3>Систематика</h3>
+      <div class="classification-item"><strong>Отряд:</strong><span>Воробьинообразные</span></div>
+      <div class="classification-item"><strong>Семейство:</strong><span>Славковые</span></div>
+      <div class="classification-item"><strong>Род:</strong><span>Бормотушки</span></div>
+      <div class="classification-item"><strong>Охранный статус:</strong><span>Редкий (Красная книга Ярославской области, Мордовии)</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="characteristics">
+  <div class="char-card"><div class="icon">📏</div><h3>Размер</h3><p>12–14 см</p></div>
+  <div class="char-card"><div class="icon">⚖️</div><h3>Вес</h3><p>10–15 г</p></div>
+  <div class="char-card"><div class="icon">🪽</div><h3>Размах крыльев</h3><p>18–21 см</p></div>
+  <div class="char-card"><div class="icon">⏰</div><h3>Продолжительность жизни</h3><p>до 6 лет</p></div>
+</div>
+
+<section class="content-section">
+  <h2>Описание</h2>
+  <p>Камышовая перелётная птица. Внешний вид схож с воробьем. Основной окрас — серо-коричневый, животик — беловатого оттенка. Отличается светлой бровью и тёмной полосой через глаз. Клюв короткий, острый.</p>
+</section>
+
+<section class="content-section">
+  <h2>Распространение и места обитания</h2>
+  <p>Места обитания — густые кусты, опушки леса, вырубки и заросли. Предпочитает сырые луга с кустарниками, окраины болот, заросли тростника и ивняка по берегам водоёмов.</p>
+</section>
+
+<section class="content-section">
+  <h2>Питание</h2>
+  <p>Питается мелкими насекомыми и их личинками (комарами, мухами, жуками), пауками, которых собирает в траве и кустарнике. В конце лета может поедать ягоды.</p>
+
+  <div class="info-box">
+    <h3>💡 Интересный факт</h3>
+    <p>Несмотря на название «бормотушка», её пение довольно мелодичное, хотя и тихое. Песня состоит из быстрого, негромкого щебетания с вкраплениями подражаний голосам других птиц. Из-за скрытного образа жизни и внешней невзрачности птица малоизучена.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Размножение</h2>
+  <p>Гнездо строит на земле или невысоко в кустах, хорошо замаскированное. Оно имеет форму шара или чаши. В кладке 4–6 яиц светлого цвета с мелкими крапинками. Насиживает в основном самка около 13 дней.</p>
+</section>
+
+<section class="content-section">
+  <h2>Поведение и голос</h2>
+  <p>Скрытная и осторожная птица. Держится в густой растительности, где её сложно увидеть. Песня — торопливое, негромкое бормотание. Позывка — короткое «чек» или «чрр».</p>
+</section>
+
+<section class="content-section">
+  <h2>Фотогалерея</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%B1%D0%BE%D1%80%D0%BC%D0%BE%D1%82%D1%83%D1%88%D0%BA%D0%B0_%D0%B8_%D0%BB%D1%8E%D0%BF%D0%B8%D0%BD%D1%8B.jpg/500px-%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F_%D0%B1%D0%BE%D1%80%D0%BC%D0%BE%D1%82%D1%83%D1%88%D0%BA%D0%B0_%D0%B8_%D0%BB%D1%8E%D0%BF%D0%B8%D0%BD%D1%8B.jpg" alt="Бормотушка в кустах"></div>
+    <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Iduna_caligata_MHNT_ZOO_2010_11_201_P%C3%A9rowsk.jpg/500px-Iduna_caligata_MHNT_ZOO_2010_11_201_P%C3%A9rowsk.jpg" alt="Бормотушка на травинке"></div>
+    <div class="gallery-item"><img src="https://wildlife.by/upload/medialibrary/881/881e7dfeccacd3693c612092aebc8970.jpg" alt="Бормотушка крупным планом"></div>
+    <div class="gallery-item"><img src="https://rbcu.ru/upload/iblock/9f5/39noname51_060708.jpg" alt="Бормотушка у воды"></div>
+  </div>
+</section>
+
+<a href="../classification_updated.html" class="back-link">← Вернуться к списку птиц</a>
+
+</main>
+  <footer>
+    <h2>📞 Контактная информация</h2>
+    <p>&copy; 2025 Птицы Москвы и Подмосковья</p>
+    <address>
+      Разработчик: Дзюба Полина<br>
+      Email: <a href="mailto:burnermail@gmail.com">burnermail@gmail.com</a><br>
+      Телефон: <a href="tel:+78005553535">+7 (800) 555-35-35</a>
+    </address>
+  </footer>
+</body>
+</html>
